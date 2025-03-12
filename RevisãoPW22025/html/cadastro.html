@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="/css/cadastro.css">
+</head>
+<body>
+    <div class="container-principal">
+        <div class="formulario">
+            <form id="form-cadastro" onsubmit="cadastrar(event)">
+                <h3>Cadastro ETEC UIRAPURU</h3>
+
+                <input type="email" placeholder="E-mail" id="email" required="true" />
+                <input type="text" placeholder="Usuário" id="usuario" required="true" minlength="3" maxlength="15"/>
+                <input type="password" placeholder="Senha" id="senha" required="true" minlength="4" maxlength="15"/>
+                <input type="password" placeholder="Confirmar Senha" id="confirmar-senha" required="true" minlength="4" maxlength="15"/>
+
+                <input type="submit" value="Entrar" />
+                <p><a href="/html/login.html">Faça login?</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    
+        function cadastrar(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var usuario = document.getElementById('usuario').value;
+            var senha = document.getElementById('senha').value;
+            var confirmarSenha = document.getElementById('confirmar-senha').value;
+
+            if (senha === confirmarSenha) {
+            
+                alert('Cadastro realizado com sucesso! Faça login agora.');
+                window.location.href = "/html/login.html";  
+            } else {
+                alert('As senhas não são iguais. Tente novamente.');
+                
+            }
+            
+        }
+    </script>
+    <script src="/JavaScript/logar.js"></script>
+</body>
+</html>
